@@ -17,7 +17,6 @@ const projects = [
     tech: ["TypeScript", "MySQL", "TypeORM", "REST API"],
     description:
       "Designing a full-stack clothing order system with TypeORM backend and MySQL integration, focusing on UX and transaction security.",
-    linkLive: "#",
     linkCode: "https://github.com/your-username/sivam-sarees",
     status: "In Progress",
   },
@@ -31,14 +30,20 @@ const projects = [
     status: "Completed",
   },
   {
-    title: "Certificate Expiry System – NLTVC",
-    tech: ["JavaScript", "MySQL", "Node.js"],
-    description:
-      "Created a notification system managing 150+ student records, improving certificate renewal rates by 90%.",
-    linkLive: "#",
-    linkCode: "https://github.com/your-username/nltvc-cert-system",
-    status: "Completed",
-  },
+      title: "TeachTeam - Tutor Hiring Management System",
+      description: "Full-stack tutor hiring system with automated reporting and comprehensive admin dashboard",
+      tech: ["React", "TypeScript", "Node.js", "Express", "MySQL", "TypeORM", "GraphQL", "REST API"],
+      image: "/teachteam.jpg",
+      github: "https://github.com/yourusername/teachteam",
+      live: "https://teachteam.example.com",
+      features: [
+        "Node.js/Express backend with MySQL database using TypeORM",
+        "GraphQL admin dashboard for automated reporting",
+        "RESTful APIs with user authentication and data validation",
+        "Unit testing for reliability and data integrity",
+        "Advanced search and filter with optimized queries on normalized schema"
+      ]
+    },
 ];
 
 export default function Projects() {
