@@ -3,7 +3,7 @@ import Hero from "@/app/components/Hero";
 import TechStack from "@/app/components/TechStack";
 import Projects from "@/app/components/Projects";
 import DanceGallery from "@/app/components/Dance";
-import Contact from "@/app/components/Contact";
+import About from "@/app/components/Contact";
 import Education from "@/app/components/Edu"
 import Navbar from "@/app/components/Nav"
 
@@ -13,11 +13,11 @@ export default function Home() {
       <Navbar />
     <main>
       <Hero />
-      <TechStack />
+      <About/>
       <Education />
+      <TechStack />
       <Projects />
       <DanceGallery />
-      <Contact />
     </main>
     </>
   );

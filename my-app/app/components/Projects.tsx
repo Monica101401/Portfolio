@@ -30,20 +30,12 @@ const projects = [
     status: "Completed",
   },
   {
-      title: "TeachTeam - Tutor Hiring Management System",
-      description: "Full-stack tutor hiring system with automated reporting and comprehensive admin dashboard",
-      tech: ["React", "TypeScript", "Node.js", "Express", "MySQL", "TypeORM", "GraphQL", "REST API"],
-      image: "/teachteam.jpg",
-      github: "https://github.com/yourusername/teachteam",
-      live: "https://teachteam.example.com",
-      features: [
-        "Node.js/Express backend with MySQL database using TypeORM",
-        "GraphQL admin dashboard for automated reporting",
-        "RESTful APIs with user authentication and data validation",
-        "Unit testing for reliability and data integrity",
-        "Advanced search and filter with optimized queries on normalized schema"
-      ]
-    },
+    title: "TeachTeam - Tutor Hiring Management System",
+    description: "Full-stack tutor hiring system with automated reporting and comprehensive admin dashboard",
+    tech: ["React", "TypeScript", "Node.js", "Express", "MySQL", "TypeORM", "GraphQL", "REST API"],
+    linkCode: "https://github.com/yourusername/teachteam",
+    status: "Completed"
+  },
 ];
 
 export default function Projects() {
@@ -57,8 +49,10 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            Projects
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white pb-2">
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             A collection of my recent work showcasing full-stack development, database management, and modern web technologies.
@@ -110,24 +104,28 @@ export default function Projects() {
 
               {/* Links */}
               <div className="flex gap-4">
-                <a
-                  href={proj.linkLive}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg"
-                >
-                  <ExternalLink size={18} />
-                  Live Demo
-                </a>
-                <a
-                  href={proj.linkCode}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-indigo-600 dark:hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300"
-                >
-                  <Github size={18} />
-                  Code
-                </a>
+                {proj.linkLive && (
+                  <a
+                    href={proj.linkLive}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                  >
+                    <ExternalLink size={18} />
+                    Live Demo
+                  </a>
+                )}
+                {proj.linkCode && (
+                  <a
+                    href={proj.linkCode}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${proj.linkLive ? 'flex-1' : 'w-full'} flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-indigo-600 dark:hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300`}
+                  >
+                    <Github size={18} />
+                    Code
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

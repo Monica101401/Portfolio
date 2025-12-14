@@ -23,10 +23,10 @@ export default function Hero() {
               Hello, I'm
             </p>
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-              Monica
+              Monica Radhakrishnan
             </h1>
             <h2 className="text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 font-light">
-              Developer & Dancer
+              Developer 
             </h2>
           </motion.div>
 
@@ -36,10 +36,10 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            I transform complex problems into intuitive user experiences. With a Master's 
-            from RMIT, I bring the same dedication to building scalable web applications 
-            that I've cultivated through years of Bharatanatyam—where every movement tells a story, 
-            and every line of code creates possibility.
+            Building the web, one elegant solution at a time. Master's student at RMIT 
+            with hands-on experience creating applications that perform 90% better and 
+            serve real users. Nine years of Bharatanatyam taught me that excellence is in 
+            the details—whether in code or choreography.
           </motion.p>
 
           {/* CTA Buttons */}

@@ -3,10 +3,6 @@ import { motion } from "framer-motion";
 
 const photos = [
   "/dance1.jpg",
-  "/dance2.jpg",
-  "/dance3.jpg",
-  "/dance4.jpg",
-  "/dance5.jpg",
 ];
 
 export default function DanceGallery() {

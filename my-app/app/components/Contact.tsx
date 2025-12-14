@@ -1,12 +1,45 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Palette, Zap } from "lucide-react";
+import { Code, Database, Zap, Rocket, Layout } from "lucide-react";
 
-export default function About() {
+export default function WhatIDo() {
+  const skills = [
+    {
+      icon: Layout,
+      title: "Frontend Development",
+      description: "Building responsive, accessible interfaces with React, Next.js, and TypeScript that deliver seamless user experiences.",
+      color: "text-blue-500"
+    },
+    {
+      icon: Database,
+      title: "Backend Development",
+      description: "Designing robust APIs and database architectures using Node.js, SQL, and TypeORM for scalable applications.",
+      color: "text-purple-500"
+    },
+    {
+      icon: Zap,
+      title: "Performance Optimization",
+      description: "Enhancing application speed and efficiency, achieving measurable improvements in load times and user engagement.",
+      color: "text-green-500"
+    },
+    {
+      icon: Code,
+      title: "Full-Stack Integration",
+      description: "Seamlessly connecting frontend and backend systems for end-to-end solutions that work flawlessly.",
+      color: "text-indigo-500"
+    },
+    {
+      icon: Rocket,
+      title: "Project Leadership",
+      description: "Leading development initiatives with Agile methodology, clear communication, and collaborative problem-solving.",
+      color: "text-rose-500"
+    }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-white dark:bg-slate-900">
-      <div className="container mx-auto px-6">
+    <section id="what-i-do" className="py-20 bg-white dark:bg-slate-900">
+      <div className="container mx-auto px-6 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,69 +47,69 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">What I Do</h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-            A journey from Chennai to Melbourne, blending technical expertise with cultural creativity
+            Transforming ideas into elegant solutions through full-stack development
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold mb-4">My Story</h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-4">
-              Currently pursuing a Master of Information Technology at RMIT University (GPA: 3.5), 
-              I bring hands-on experience from internships at NLTVC Malaysia and Beta Builders, 
-              where I&apos;ve developed scalable applications and improved system efficiency.
-            </p>
-            <p className="text-slate-600 dark:text-slate-400 mb-4">
-              With a Bachelor&apos;s in Computer Science Engineering from Anna University (First Class with Distinction), 
-              I specialize in building intuitive user interfaces and robust backend systems using React, TypeScript, 
-              Next.js, and modern web technologies.
-            </p>
-            <p className="text-slate-600 dark:text-slate-400">
-              Beyond code, I trained in Bharatanatyam for 9 years, teaching for 2 years—bringing discipline, 
-              creativity, and leadership to everything I do. Fluent in Tamil and English, I thrive in 
-              collaborative, multicultural environments.
-            </p>
-          </motion.div>
+        {/* Skills List */}
+        <div className="space-y-8">
+          {skills.map((skill, index) => {
+            const Icon = skill.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex gap-6 items-start group"
+              >
+                {/* Icon */}
+                <div className="flex-shrink-0">
+                  <div className="w-14 h-14 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Icon className={`w-7 h-7 ${skill.color}`} />
+                  </div>
+                </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="grid gap-6"
-          >
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20">
-              <Code className="w-10 h-10 text-blue-600 mb-4" />
-              <h4 className="text-xl font-bold mb-2">Clean Code</h4>
-              <p className="text-slate-600 dark:text-slate-400">
-                Writing maintainable, scalable code following best practices and modern standards.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20">
-              <Palette className="w-10 h-10 text-purple-600 mb-4" />
-              <h4 className="text-xl font-bold mb-2">UX-Focused</h4>
-              <p className="text-slate-600 dark:text-slate-400">
-                Creating intuitive, accessible interfaces that users love to interact with.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20">
-              <Zap className="w-10 h-10 text-amber-600 mb-4" />
-              <h4 className="text-xl font-bold mb-2">Performance</h4>
-              <p className="text-slate-600 dark:text-slate-400">
-                Optimizing applications for speed, efficiency, and seamless user experiences.
-              </p>
-            </div>
-          </motion.div>
+                {/* Content */}
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+                    {skill.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {skill.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
+
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16"
+        >
+          <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950 rounded-2xl">
+            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">15+</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Technologies</div>
+          </div>
+          
+          <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950 rounded-2xl">
+            <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">20+</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Projects Built</div>
+          </div>
+          
+          <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 rounded-2xl">
+            <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">100%</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Committed</div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
