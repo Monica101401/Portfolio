@@ -16,19 +16,28 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About Me", href: "#about" },
-    { name: "My Work", href: "#projects" },
-    { name: "Beyond Code", href: "#dance" }
+    { name: "About Me", href: "#hero" },
+{ name: "My Work", href: "#projects" },
+{ name: "Beyond Code", href: "#beyond-code" }
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
-  };
+  e.preventDefault();
+  
+  // Handle homepage link (scroll to top)
+  if (href === '#') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsOpen(false);
+    return;
+  }
+  
+  // Handle section links
+  const element = document.querySelector(href);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  }
+};
 
   return (
     <motion.nav
@@ -72,15 +81,17 @@ export default function Navbar() {
 
           {/* View CV Button - Desktop */}
           <motion.a
-            href="/Monica_Resume.pdf"
-            download
-            className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-full font-semibold shadow-lg transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Download className="w-4 h-4" />
-            View CV
-          </motion.a>
+  href="/Monica_Resume_Developer.pdf"
+  download="Monica_Resume_Developer.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-full font-semibold shadow-lg transition-all"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+>
+  <Download className="w-4 h-4" />
+  View CV
+</motion.a>
 
           {/* Mobile Menu Button */}
           <button

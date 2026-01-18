@@ -1,11 +1,10 @@
 "use client";
 import Hero from "@/app/components/Hero";
-import TechStack from "@/app/components/TechStack";
 import Projects from "@/app/components/Projects";
-import DanceGallery from "@/app/components/Dance";
-import About from "@/app/components/Contact";
-import Education from "@/app/components/Edu"
 import Navbar from "@/app/components/Nav"
+import Exp from "@/app/components/Exp"
+import Beyond from "@/app/components/Beyond"
+import Footer from "@/app/components/footer"
 
 export default function Home() {
   return (
@@ -13,11 +12,10 @@ export default function Home() {
       <Navbar />
     <main>
       <Hero />
-      <About/>
-      <Education />
-      <TechStack />
       <Projects />
-      <DanceGallery />
+      <Exp/>
+      <Beyond/>
+      <Footer/>
     </main>
     </>
   );
