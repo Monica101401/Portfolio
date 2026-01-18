@@ -20,7 +20,7 @@ const projects = [
       icon: <Users className="w-4 h-4" />,
       text: "Empowering healthcare practitioners with exportable visual insights"
     },
-    images: ["/projects/toc-1.png", "/projects/toc-2.png", "/projects/toc3.png"],
+    images: ["/projects/toc-1.png", "/projects/toc2.png", "/projects/toc3.png"],
     linkLive: "https://toc-userfrontend.vercel.app",
     linkCode: "https://github.com/Monica101401/theory-of-change",
     status: "Completed",
